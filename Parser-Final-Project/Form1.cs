@@ -20,13 +20,12 @@ namespace Parser_Final_Project
 			string input = inputRichBox.Text;
 			Scanner scanner = new();
 			scanner.StartScanning(input);
-			TokenOutput = "";
+			TokenOutput = "\tValue\t\tToken Type\n\t--------------------------\n";
 			foreach (var item in scanner.Tokens)
 			{
 				TokenOutput += item.ToString() + "\n";
 			}
 			tokensRichBox.Text = TokenOutput;
-			tokenPanel.BringToFront();
 		}
 
 		private void tokensBackBtn_Click(object sender, EventArgs e)
@@ -44,7 +43,7 @@ namespace Parser_Final_Project
 			SyntaxTree = parser._SyntaxTree;
 			SyntaxTreeForm syntaxTreeForm = new SyntaxTreeForm(SyntaxTree);
 			syntaxTreeForm.Show();
-	
+
 		}
 
 		private void syntaxTreeBackBtn_Click(object sender, EventArgs e)
@@ -52,8 +51,6 @@ namespace Parser_Final_Project
 			mainPanel.BringToFront();
 		}
 
-
-	
 		
 	}
 

@@ -29,30 +29,47 @@
 		private void InitializeComponent()
 		{
 			panel1 = new Panel();
+			pictureBox1 = new PictureBox();
+			panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
 			SuspendLayout();
 			// 
 			// panel1
 			// 
+			panel1.Controls.Add(pictureBox1);
 			panel1.Dock = DockStyle.Fill;
 			panel1.Location = new Point(0, 0);
 			panel1.Name = "panel1";
-			panel1.Size = new Size(1488, 711);
+			panel1.Size = new Size(1382, 673);
 			panel1.TabIndex = 0;
 			panel1.Paint += panel1_Paint;
+			// 
+			// pictureBox1
+			// 
+			pictureBox1.Dock = DockStyle.Fill;
+			pictureBox1.Location = new Point(0, 0);
+			pictureBox1.Name = "pictureBox1";
+			pictureBox1.Size = new Size(1382, 673);
+			pictureBox1.TabIndex = 0;
+			pictureBox1.TabStop = false;
 			// 
 			// SyntaxTreeForm
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(1488, 711);
+			ClientSize = new Size(1382, 673);
 			Controls.Add(panel1);
 			Name = "SyntaxTreeForm";
 			Text = "SyntaxTreeForm";
+			Load += SyntaxTreeForm_Load;
+			panel1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
 			ResumeLayout(false);
 		}
 
 		#endregion
 
 		private Panel panel1;
+		private PictureBox pictureBox1;
 	}
 }

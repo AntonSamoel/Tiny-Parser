@@ -25,7 +25,7 @@ namespace Parser_Final_Project
 
         public override string ToString()
         {
-            return $"\t\t\t{lex},{token_type}";
+            return $"\t{lex}\t\t{token_type}\n\t--------------------------";
         }
     }
    public  class Scanner
