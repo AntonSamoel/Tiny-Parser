@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			mainPanel = new Panel();
 			errorLabel = new Label();
 			label3 = new Label();
@@ -57,7 +58,7 @@
 			mainPanel.Font = new Font("Ebrima", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			mainPanel.Location = new Point(0, 0);
 			mainPanel.Name = "mainPanel";
-			mainPanel.Size = new Size(1122, 673);
+			mainPanel.Size = new Size(1527, 673);
 			mainPanel.TabIndex = 0;
 			// 
 			// errorLabel
@@ -75,7 +76,7 @@
 			label3.AutoSize = true;
 			label3.Font = new Font("Ebrima", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			label3.ForeColor = SystemColors.ControlDarkDark;
-			label3.Location = new Point(818, 91);
+			label3.Location = new Point(684, 91);
 			label3.Name = "label3";
 			label3.Size = new Size(90, 31);
 			label3.TabIndex = 6;
@@ -83,7 +84,7 @@
 			// 
 			// tokensRichBox
 			// 
-			tokensRichBox.Location = new Point(658, 125);
+			tokensRichBox.Location = new Point(542, 125);
 			tokensRichBox.Name = "tokensRichBox";
 			tokensRichBox.Size = new Size(388, 395);
 			tokensRichBox.TabIndex = 5;
@@ -94,7 +95,7 @@
 			label2.AutoSize = true;
 			label2.Font = new Font("Ebrima", 22.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
 			label2.ForeColor = SystemColors.ButtonShadow;
-			label2.Location = new Point(376, 9);
+			label2.Location = new Point(593, 9);
 			label2.Name = "label2";
 			label2.Size = new Size(316, 50);
 			label2.TabIndex = 4;
@@ -102,7 +103,7 @@
 			// 
 			// makeParseTreeBtn
 			// 
-			makeParseTreeBtn.Location = new Point(818, 572);
+			makeParseTreeBtn.Location = new Point(542, 572);
 			makeParseTreeBtn.Name = "makeParseTreeBtn";
 			makeParseTreeBtn.Size = new Size(228, 42);
 			makeParseTreeBtn.TabIndex = 3;
@@ -125,7 +126,7 @@
 			label1.AutoSize = true;
 			label1.Font = new Font("Ebrima", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
 			label1.ForeColor = SystemColors.ControlDarkDark;
-			label1.Location = new Point(200, 91);
+			label1.Location = new Point(156, 91);
 			label1.Name = "label1";
 			label1.Size = new Size(215, 31);
 			label1.TabIndex = 0;
@@ -135,7 +136,7 @@
 			// 
 			inputRichBox.Location = new Point(28, 125);
 			inputRichBox.Name = "inputRichBox";
-			inputRichBox.Size = new Size(580, 395);
+			inputRichBox.Size = new Size(489, 395);
 			inputRichBox.TabIndex = 1;
 			inputRichBox.Text = "";
 			// 
@@ -143,10 +144,11 @@
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(1122, 673);
+			ClientSize = new Size(1527, 673);
 			Controls.Add(mainPanel);
+			Icon = (Icon)resources.GetObject("$this.Icon");
 			Name = "Form1";
-			Text = "Form1";
+			Text = "Tiny Language Compiler";
 			mainPanel.ResumeLayout(false);
 			mainPanel.PerformLayout();
 			ResumeLayout(false);
