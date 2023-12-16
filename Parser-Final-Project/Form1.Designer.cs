@@ -29,14 +29,15 @@
 		private void InitializeComponent()
 		{
 			mainPanel = new Panel();
+			errorLabel = new Label();
+			label3 = new Label();
+			tokensRichBox = new RichTextBox();
 			label2 = new Label();
 			makeParseTreeBtn = new Button();
 			generateTokensBtn = new Button();
 			label1 = new Label();
 			inputRichBox = new RichTextBox();
 			backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-			tokensRichBox = new RichTextBox();
-			label3 = new Label();
 			mainPanel.SuspendLayout();
 			SuspendLayout();
 			// 
@@ -44,6 +45,7 @@
 			// 
 			mainPanel.BackColor = Color.WhiteSmoke;
 			mainPanel.BackgroundImageLayout = ImageLayout.Stretch;
+			mainPanel.Controls.Add(errorLabel);
 			mainPanel.Controls.Add(label3);
 			mainPanel.Controls.Add(tokensRichBox);
 			mainPanel.Controls.Add(label2);
@@ -57,6 +59,35 @@
 			mainPanel.Name = "mainPanel";
 			mainPanel.Size = new Size(1122, 673);
 			mainPanel.TabIndex = 0;
+			// 
+			// errorLabel
+			// 
+			errorLabel.AutoSize = true;
+			errorLabel.Font = new Font("Arial Narrow", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			errorLabel.ForeColor = Color.Red;
+			errorLabel.Location = new Point(335, 581);
+			errorLabel.Name = "errorLabel";
+			errorLabel.Size = new Size(0, 33);
+			errorLabel.TabIndex = 7;
+			// 
+			// label3
+			// 
+			label3.AutoSize = true;
+			label3.Font = new Font("Ebrima", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label3.ForeColor = SystemColors.ControlDarkDark;
+			label3.Location = new Point(818, 91);
+			label3.Name = "label3";
+			label3.Size = new Size(90, 31);
+			label3.TabIndex = 6;
+			label3.Text = "Tokens";
+			// 
+			// tokensRichBox
+			// 
+			tokensRichBox.Location = new Point(658, 125);
+			tokensRichBox.Name = "tokensRichBox";
+			tokensRichBox.Size = new Size(388, 395);
+			tokensRichBox.TabIndex = 5;
+			tokensRichBox.Text = "";
 			// 
 			// label2
 			// 
@@ -108,25 +139,6 @@
 			inputRichBox.TabIndex = 1;
 			inputRichBox.Text = "";
 			// 
-			// tokensRichBox
-			// 
-			tokensRichBox.Location = new Point(658, 125);
-			tokensRichBox.Name = "tokensRichBox";
-			tokensRichBox.Size = new Size(388, 395);
-			tokensRichBox.TabIndex = 5;
-			tokensRichBox.Text = "";
-			// 
-			// label3
-			// 
-			label3.AutoSize = true;
-			label3.Font = new Font("Ebrima", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label3.ForeColor = SystemColors.ControlDarkDark;
-			label3.Location = new Point(818, 91);
-			label3.Name = "label3";
-			label3.Size = new Size(90, 31);
-			label3.TabIndex = 6;
-			label3.Text = "Tokens";
-			// 
 			// Form1
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
@@ -151,5 +163,6 @@
 		private Label label2;
 		private Label label3;
 		private RichTextBox tokensRichBox;
+		private Label errorLabel;
 	}
 }

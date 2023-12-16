@@ -25,6 +25,14 @@ namespace Parser_Final_Project
 			{
 				TokenOutput += item.ToString() + "\n";
 			}
+			if (Errors.Error_List.Count > 0)
+			{
+				foreach (var item in Errors.Error_List)
+				{
+					TokenOutput += item;
+				}
+			}
+				
 			tokensRichBox.Text = TokenOutput;
 		}
 
@@ -38,11 +46,29 @@ namespace Parser_Final_Project
 			string input = inputRichBox.Text;
 			Scanner scanner = new();
 			scanner.StartScanning(input);
-			Parser parser = new(scanner.Tokens);
-			parser.Program();
-			SyntaxTree = parser._SyntaxTree;
-			SyntaxTreeForm syntaxTreeForm = new SyntaxTreeForm(SyntaxTree);
-			syntaxTreeForm.Show();
+
+			if(scanner.Tokens.Count == 0)
+			{
+				errorLabel.Text = "No Tokens Found To Parse";
+			}
+
+			else if (Errors.Error_List.Count > 0)
+			{
+				errorLabel.Text = "Can't Parse Unrecognized token !!";
+			}
+			else
+			{
+				errorLabel.Text = "";
+				Parser parser = new(scanner.Tokens);
+				parser.Program();
+				SyntaxTree = parser._SyntaxTree;
+				SyntaxTreeForm syntaxTreeForm = new SyntaxTreeForm(SyntaxTree);
+				syntaxTreeForm.Show();
+			}
+
+			Errors.Error_List = new List<string>();
+			
+
 
 		}
 

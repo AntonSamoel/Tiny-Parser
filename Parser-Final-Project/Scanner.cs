@@ -21,6 +21,7 @@ namespace Parser_Final_Project
     public class Token
     {
         public string lex = "";
+        public string lex2 = string.Empty;
         public Token_Class token_type;
 
         public override string ToString()

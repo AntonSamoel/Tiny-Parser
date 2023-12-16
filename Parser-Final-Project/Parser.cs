@@ -104,12 +104,13 @@ namespace Parser_Final_Project
             Node node = new(token);
 
             Match(tokens[current].token_type);
-
             Match(tokens[current].token_type);
+            Node main = new Node(new Token() { token_type = Token_Class.ASSIGN ,lex= "assign" });
+            //main.Children.Add(node);
+            main.Token.lex2 = node.Token.lex;
+			main.Children.Add(Exp());
 
-            node.Children.Add(Exp());
-
-            return (node);
+            return (main);
         }
         private Node Read(Token token)
         {
@@ -117,9 +118,11 @@ namespace Parser_Final_Project
 
             Match(tokens[current].token_type);
 
-            node.Children.Add(new Node(tokens[current]));
+            //node.Children.Add(new Node(tokens[current]));
+            node.Token.lex2 = tokens[current].lex;
 
-            Match(tokens[current].token_type);
+
+			Match(tokens[current].token_type);
 
             return node;
         }
