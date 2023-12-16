@@ -28,7 +28,7 @@ namespace Parser_Final_Project
         }
         private Node StatementSequance()
         {
-            Node head, temp;
+           Node head, temp;
 
            head = Statement();
 
@@ -104,10 +104,15 @@ namespace Parser_Final_Project
             Node node = new(token);
 
             Match(tokens[current].token_type);
+
+            if (tokens[current].token_type != Token_Class.ASSIGN)
+            {
+                return new Node();
+            }
             Match(tokens[current].token_type);
-            Node main = new Node(new Token() { token_type = Token_Class.ASSIGN ,lex= "assign" });
+            Node main = new (new Token() { token_type = Token_Class.ASSIGN ,lex= "assign" });
             //main.Children.Add(node);
-            main.Token.lex2 = node.Token.lex;
+            main.Token!.lex2 = node.Token!.lex;
 			main.Children.Add(Exp());
 
             return (main);
