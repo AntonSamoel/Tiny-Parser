@@ -15,7 +15,7 @@ namespace Parser_Final_Project
         LESSTHAN, SEMICOLON, OPENBRACKET, CLOSEDBRACKET,
 
         //Reserved words
-        READ, WRITE, REPEAT, UNTIL, IF, THEN, END
+        READ, WRITE, REPEAT, UNTIL, IF, THEN, END, ERROR
     }
 
     public class Token

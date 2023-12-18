@@ -113,7 +113,7 @@ namespace Parser_Final_Project
 
 		private void pictureBox1_Paint(object sender, PaintEventArgs e)
 		{
-			DrawTree(e.Graphics, SyntaxTree.Root, 100, 50);
+			DrawTree(e.Graphics, SyntaxTree.Root, 600, 100);
 		}
 
 		private void SyntaxTreeForm_Load(object sender, EventArgs e)

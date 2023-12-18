@@ -72,21 +72,27 @@ namespace Parser_Final_Project
             }
             return node;
         }
-        private Node If_Stmt(Token token)
-        {
-            Node node = new(token);
-            Match(tokens[current].token_type);
+		private Node If_Stmt(Token token)
+		{
+			Node node = new(token);
+			Match(tokens[current].token_type);
 
-            node.Children.Add(Exp());
-            node.Children.Add(ThenIf());
+			node.Children.Add(Exp());
+			node.Children.Add(ThenIf());
 
-            Match(tokens[current].token_type);
-            //node.Children.Add(ElseIf());
+			if (current < tokens.Count)
+				Match(tokens[current].token_type);
+			else
+			{
+				node.Children.RemoveAt(tokens.Count - 1);
+				node.Children.Add(new Node());
+			}
+			//node.Children.Add(ElseIf());
 
-            return node;
-        }
+			return node;
+		}
 
-        private Node Repeat(Token token)
+		private Node Repeat(Token token)
         {
             Node node = new(token);
             Match(tokens[current].token_type);
@@ -104,11 +110,12 @@ namespace Parser_Final_Project
             Node node = new(token);
 
             Match(tokens[current].token_type);
-
-            if (tokens[current].token_type != Token_Class.ASSIGN)
+            if (current == tokens.Count)
+                return new Node();
+            if ( tokens[current].token_type != Token_Class.ASSIGN)
             {
                 return new Node();
-            }
+            } 
             Match(tokens[current].token_type);
             Node main = new (new Token() { token_type = Token_Class.ASSIGN ,lex= "assign" });
             //main.Children.Add(node);
