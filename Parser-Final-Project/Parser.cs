@@ -89,7 +89,7 @@ namespace Parser_Final_Project
 				Match(tokens[current].token_type);
 			else
 			{
-				node.Children.RemoveAt(tokens.Count - 1);
+				node.Children.RemoveAt(node.Children.Count - 1);
 				node.Children.Add(new Node());
 			}
 			//node.Children.Add(ElseIf());
