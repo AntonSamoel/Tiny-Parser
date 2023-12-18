@@ -109,7 +109,7 @@ namespace Parser_Final_Project
 				else
 				{
 					string[] tokenValue = line.Split(',');
-					Token_Class type = GetTokenClass(tokenValue[1].ToUpper().Trim(' '));
+					Token_Class type = GetTokenClass(tokenValue[1].Trim(' '));
 
 					if (type == Token_Class.ERROR)
 					{
